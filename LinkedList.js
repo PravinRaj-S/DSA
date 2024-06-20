@@ -20,14 +20,11 @@ class LinkedList{
             this.head = newNode
             this.tail = this.head
         }else{
-            console.log(this);return false;
             this.tail.next = newNode
             this.tail = newNode
         }
 
         this.length++
-
-        // return this
     }
 }
 
