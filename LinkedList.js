@@ -25,10 +25,37 @@ class LinkedList{
         }
 
         this.length++
+
+        return this
+    }
+
+    pop(){
+        if(!this.head) return undefined
+
+        let pre     = this.head
+        let temp    = this.head
+
+        while(temp.next){
+            pre     = temp
+            temp    = temp.next
+        }
+
+        this.tail       = pre
+        this.tail.next  = null
+        this.length--
+
+        if(this.length == 0){
+            this.head = null
+            this.tail = null
+        }
+
+        return temp
     }
 }
 
-var myLinkedList = new LinkedList(4)
-// console.log(myLinkedList)
-myLinkedList.push(7)
-// console.log(myLinkedList.push(8))
+var myLinkedList    = new LinkedList(4)
+var pushResult      = myLinkedList.push(7)
+var popResult       = myLinkedList.pop()
+var popResult       = myLinkedList.pop()
+var popResult       = myLinkedList.pop()
+console.log(popResult);
